@@ -1,0 +1,17 @@
+Error fetching trading volume: HTTPSConnectionPool(host='www.examplestockmarketwebsite.com', port=443): Max retries exceeded with url: /stocks/AAPL (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002AAAAFDE790>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Error fetching trading volume.
+Error fetching company news: HTTPSConnectionPool(host='www.examplestockmarketwebsite.com', port=443): Max retries exceeded with url: /news/AAPL (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002AAAB25B010>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Error fetching company news.
+Error fetching historical data: HTTPSConnectionPool(host='www.examplestockmarketwebsite.com', port=443): Max retries exceeded with url: /historical/AAPL?start=2021-01-01&end=2021-12-31 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002AAAB25B650>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Antho\temp.py", line 171, in <module>
+    analyzer.analyze_stock_trends(stock_symbol, start_date, end_date)
+  File "C:\Users\Antho\temp.py", line 93, in analyze_stock_trends
+    data["Date"] = pd.to_datetime(data["Date"])
+                                  ~~~~^^^^^^^^
+  File "C:\Users\Antho\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Antho\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\range.py", line 349, in get_loc
+    raise KeyError(key)
+KeyError: 'Date'
